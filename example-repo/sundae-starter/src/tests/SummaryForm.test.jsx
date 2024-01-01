@@ -7,7 +7,7 @@ describe('initial state', () => {
         render(<SummaryForm />);
 
         const checkbox = screen.getByRole('checkbox');
-        const confirmButton = screen.getAllByRole('button', { name: /confirm order/i });
+        const confirmButton = screen.getByRole('button', { name: /confirm order/i });
 
         expect(checkbox).not.toBeChecked();
         expect(confirmButton).toBeDisabled();
@@ -17,7 +17,7 @@ describe('initial state', () => {
         render(<SummaryForm />);
 
         const checkbox = screen.getByRole('checkbox');
-        const confirmButton = screen.getAllByRole('button', { name: /confirm order/i });
+        const confirmButton = screen.getByRole('button', { name: /confirm order/i });
 
         fireEvent.click(checkbox);
         expect(confirmButton).toBeEnabled();
