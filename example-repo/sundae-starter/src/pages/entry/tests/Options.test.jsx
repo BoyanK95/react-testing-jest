@@ -14,11 +14,11 @@ test('displays image for each scoop from the server', async () => {
 });
 
 test('display image of each toping from the server', async () => {
-    render(<Options optionType='toppings'/>);
+    render(<Options optionType='toppings' />);
 
-    const toppings = await screen.findAllByRole('img', { name: /topping$/i });
-    expect(toppings).toHaveLength(3);
+    const toppingsImage = await screen.findAllByRole('img', { name: /topping$/i });
+    expect(toppingsImage).toHaveLength(3);
 
-    const toppingAltText = toppings.map((el) => el.alt);
-    // expect(toppingAltText).toEqual(['Cherries topping', 'M&Ms topping', 'Hot fudge topping'])
+    const toppingAltText = toppingsImage.map((el) => el.alt);
+    expect(toppingAltText).toEqual(['Cherries topping', 'M&Ms topping', 'Hot fudge topping'])
 });
